@@ -1,0 +1,119 @@
+body {
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.established {
+    font-style: italic;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+.menu {
+    width: 80%;
+    background-color: burlywood;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 500px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -25;
+}
+
+hr {
+    height: 2px;
+    background-color: brown;
+    border-color: brown;
+}
+
+.bottom-line {
+    margin-top: 25px;
+}
+
+h1, h2 {
+    font-family: Impact, serif;
+}
+
+.item p {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.flavor, .dessert {
+    text-align: left;
+    width: 75%;
+}
+
+.price {
+    text-align: right;
+    width: 25%;
+}
+
+/* FOOTER */
+
+footer {
+    font-size: 14px;
+}
+
+.address {
+    margin-bottom: 5px;
+}
+
+a {
+    color: black;
+}
+
+    a:visited {
+        color: black;
+    }
+
+    a:hover {
+        color: brown;
+    }
+
+    a:active {
+        color: brown;
+    }
+/*步骤 56
+菜单的当前宽度将总是占到 body 元素宽度的80%。 在一个非常宽的屏幕上，咖啡和甜点看起来与它们的价格相差甚远。
+
+给 menu 类添加一个 max-width 的属性，其值为 500px，以防止它变得太宽。*/
+
+/*步骤 59
+你可以通过添加另一个用逗号分隔的字体名称来为 font-family 添加一个后备值。 Fallback 是在初始值找不到/无法使用的情况下使用的。
+
+在 Impact 字体之后添加后备（fallback）字体serif。// font-family: Impact, serif;
+
+
+    body {
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+  font-family: sans-serif;
+  padding:20px;//环绕填充
+}
+
+    //a:visited { color: grey; }
+    当链接被实际访问时，你可以使用类似 a:visited { propertyName: propertyValue; } 的 pseudo-selector 来更改链接的属性。
+
+当用户访问链接时，将页脚 Visit our website 链接的颜色更改为 grey。
+
+*/
