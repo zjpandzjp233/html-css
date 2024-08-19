@@ -1,0 +1,63 @@
+h1 {
+  text-align: center;
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 0;
+}
+
+.marker {
+  width: 200px;
+  height: 25px;
+  margin: 10px auto;
+}
+
+.cap {
+  width: 60px;
+  height: 25px;
+}
+
+.sleeve {
+  width: 110px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-left: 10px double rgba(0, 0, 0, 0.75);
+}
+
+.cap, .sleeve {
+  display: inline-block;
+}
+
+.red {
+  background: linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27));
+  box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8);
+}
+
+.green {
+  background: linear-gradient(#55680D, #71F53E, #116C31);
+  box-shadow: 0 0 20px 0 #3B7E20CC;
+}
+
+.blue {
+  background: linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%), hsl(240, 56%, 42%));
+  box-shadow: 0 0 20px 0 hsla(223,59%,31%,0.8);
+}
+
+
+/*
+ .marker {
+    //margin: 10px auto;
+  } 
+ 当简写 margin 属性有两个值时，它将 margin-top 和 margin-bottom 设置为第一个值，并将 margin-left 和 margin-right 设置为第二个值。 
+
+ box-shadow: offsetX offsetY blurRadius color;
+
+ 如果不设置 blurRadius 的值，则默认为 0，并产生锐利的边缘。 blurRadius 的值越大，模糊效果就越大。
+
+在 .green CSS 规则中，添加 box-shadow 属性，offsetX 的值为 5px、offsetY 的值为 5px，blurRadius 的值为 5px，color 为 green。
+
+box-shadow: offsetX offsetY blurRadius spreadRadius color;
+
+在 .blue CSS 规则中，添加 box-shadow 属性，offsetX 为 0，offsetY 为 0，blurRadius 为 0， spreadRadius 为 5px， color 为 blue 。
+ */
