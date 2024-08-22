@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <p>Please fill out this form with the required information</p>
+    <form method="post" action='https://register-demo.freecodecamp.org'>
+      <fieldset>
+        <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
+        <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>
+        <label for="email">Enter Your Email: <input id="email" name="email" type="email" required /></label>
+        <label for="new-password">Create a New Password: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
+      </fieldset>
+      <fieldset>
+        <legend>Account type (required)</legend>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" checked /> Personal</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business</label>
+      </fieldset>
+      <fieldset>
+        <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
+        <label for="age">Input your age (years): <input id="age" type="number" name="age" min="13" max="120" /></label>
+        <label for="referrer">How did you hear about us?
+          <select id="referrer" name="referrer">
+            <option value="">(select one)</option>
+            <option value="1">freeCodeCamp News</option>
+            <option value="2">freeCodeCamp YouTube Channel</option>
+            <option value="3">freeCodeCamp Forum</option>
+            <option value="4">Other</option>
+          </select>
+        </label>
+        <label for="bio">Provide a bio:
+          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+        </label>
+      </fieldset>
+      <label for="terms-and-conditions">
+        <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
+
+<!-- 
+
+ method 属性指定了如何将表单数据发送到 action 属性中指定的 URL。 表单数据可以通过 GET 请求作为 URL 参数发送（method="get"）
+或通过 POST 请求作为请求正文中的数据发送（method="post"）。
+设置 method 属性通过 POST 请求发送你的表单数据。
+
+在注册表单中的应用
+在给定的 HTML 代码中，将 margin: 0.5rem 0; 应用到 <label> 元素上，可以达到以下效果：
+增加行间距： 每个 <label> 元素之间会增加 0.5rem 的垂直间距，使得表单看起来更加整洁美观。
+统一对齐： 由于左右边距都设置为 0，所有的 <label> 元素会紧靠着它们的容器的左右边缘，从而保持对齐。
+
+for 属性
+作用： 用于建立标签和输入元素之间的关联。
+使用方式： 在 <label> 元素中使用 for 属性，其值为 <input> 元素的 id 属性值。
+功能： 当用户点击 <label> 元素时，浏览器会自动聚焦到具有相同 id 的 <input> 元素上。
+id 属性
+作用： 用于唯一标识一个 HTML 元素。
+使用方式： 在任何 HTML 元素中都可以使用 id 属性，其值为一个唯一的字符串。
+功能： 可以通过 JavaScript 或 CSS 选择器来引用该元素。
+
+指定表单元素的 type 属性对浏览器预期表单的数据类型至关重要。 如果未指定 type，浏览器会使用默认值 text。
+给前两个 input 元素设置其 type 属性值为 text，第三个 type 属性值为 email，第四个 type 属性值为 password。
+email 类型只允许包含 @ 以及域名中包含 . 的电子邮件。 password 类型会屏蔽输入，如果网站没有启用 HTTPS 会警告。
+
+在HTML中，pattern 属性是<input>元素的一个属性，通常与type="text"或type="password"一起使用，
+用于定义输入字段的正则表达式模式。用户输入的值必须符合这个模式才能被认为是有效的。
+正则表达式[a-z0-5]{8,}的含义如下：
+[a-z]：匹配任何小写字母（a到z）。
+0-5：这里看起来像是一个范围表达式，但实际上在正则表达式中，-不是用作减号，而是作为字符的一部分，所以它将匹配字符'0'到字符'5'。
+{8,}：表示前面的字符集合（在这个例子中是小写字母和数字0到5）至少出现8次，没有上限。
+所以，pattern="[a-z0-5]{8,}" 表示输入的字符串必须包含至少8个字符，
+这些字符可以是小写字母（a到z）或者数字0到5。如果输入的字符串不符合这个模式，表单将无法提交，除非用户更正输入。
+
+步骤 27
+我们希望单选按钮一次只能选中一个。 然而，表单并不知道这些单选按钮是一组的。
+给每一个单选按钮添加相同的 name 属性并设置其值为 account-type，以关联单选按钮。 现在，两个单选按钮就无法同时选中了。
+
+步骤 37
+提交带有选择菜单的表单向服务端发送的信息 value 并不是预期的。 因此，每一个 option 需要指定一个 value 属性。 如果没有指定，向服务器默认提交的是 option 内的文本。
+给第一个 option 指定 value ""，同级的 option 元素的 value 属性依次指定 1 到 4。
+
+CSS 中的 `margin` 属性用于设置元素的外边距，它可以接受一个到四个值来定义元素的上、右、下、左外边距。如果只给出一个值，那么这个值将应用于所有四个方向；如果给出两个值，第一个应用于上和下，第二个应用于左和右；如果给出三个值，第一个应用于上，第二个应用于左右，第三个应用于下；如果给出四个值，它们分别应用于上、右、下、左。
+以下是对您提供的CSS代码的解释：
+1. `h1, p { margin: 1em auto; }`
+   - `h1` 和 `p` 元素的外边距设置如下：
+     - `1em`：上和下外边距设置为当前字体大小的1倍。
+     - `auto`：左右外边距自动调整，这通常用于使元素水平居中。如果元素的宽度是固定的，`auto` 会将左右外边距设置为相等，从而使元素在容器中水平居中。
+2. `label { display: block; margin: 0.5rem 0; }`
+   - `label` 元素的样式设置如下：
+     - `display: block;`：将 `label` 元素的显示类型设置为块级元素，这意味着它将开始于新的一行，并且其宽度默认填满其父元素的宽度。
+     - `margin: 0.5rem 0;`：设置 `label` 元素的外边距。
+       - `0.5rem`：上和下外边距设置为0.5倍的根元素（通常是`<html>`）的字体大小。
+       - `0`：左右外边距设置为0，没有外边距。
+`rem`（root em）是一个相对单位，相对于根元素的字体大小。如果根元素的字体大小没有被明确设置，`1rem` 通常等于16像素。`em` 是相对于父元素的字体大小的单位。在上述代码中，`1em` 表示外边距是当前字体大小的1倍，而 `0.5rem` 表示外边距是当前字体大小的一半。
+
+ -->

@@ -1,0 +1,122 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #1b1b32;
+    color: #f5f6f7;
+    font-family: Tahoma;
+    font-size: 16px;
+  }
+  
+  h1, p {
+    margin: 1em auto;
+    text-align: center;
+  }
+  
+  form {
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+  
+  fieldset {
+    border: none;
+    padding: 2rem 0;
+    border-bottom: 3px solid #3b3b4f;
+  }
+  
+  fieldset:last-of-type {
+    border-bottom: none;
+  }
+  
+  label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  input,
+  textarea,
+  select {
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+  }
+  
+  input, textarea {
+    background-color: #0a0a23;
+    border: 1px solid #0a0a23;
+    color: #ffffff;
+  }
+  
+  .inline {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    width: 60%;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: #3b3b4f;
+    border-color: white;
+    min-width: 300px;
+  }
+  
+  input[type="file"] {
+    padding: 1px 2px;
+  }
+  
+  .inline{
+    display: inline; 
+  }
+  
+  a{
+    color:#dfdfe2;
+  }
+  
+
+/* 
+vh 单位代表视口高度（viewport height），相当于视口 height 高度的 1%。 这使它与视口高度相对应。
+
+与 height: 100% 的区别
+height: 100%: 设置元素的高度为其父元素的 100%。如果父元素的高度没有明确定义，子元素的高度也无法确定。
+height: 100vh: 设置元素的高度为视口高度的 100%，不受父元素高度的影响。
+
+在body里这两条的差别：background-color 是设置背景色的，而 color 是设置文本颜色的。
+
+步骤 46
+在开发过程中，看到 fieldset 默认边框很有帮助。 然而，它们使内容间的距离过远。
+删除 border，然后给 fieldset 的顶部和底部添加 2rem 的 padding。 确保移除了左侧和右侧的 padding。
+
+fieldset {
+  border: none;//这两行不能交换
+  padding: 2rem 0;
+  border-bottom: 3px solid rgb(59, 59, 79);//这两行不能交换
+}
+
+步骤 48
+最后一个 fieldset 元素的边框看起来有点不合适。 你可以使用 last-of-type CSS 伪类选择*特定*类型的最后一个元素，如下所示：
+
+示例代码
+p:last-of-type { }
+这将选择最后一个 p 元素。 创建一个定位最后一个 fieldset 元素的新选择器，并将其 border-bottom 设置为 none。
+
+input, textarea {
+  background-color: #0a0a23;//背景设置成褐色
+  border: 1px solid #0a0a23;//输入框设置成褐色
+color:#ffffff;//文字设置成白的
+min-height:2em;
+}
+
+步骤 57
+要设置提交按钮的样式，你可以使用***_属性_选择器***，它根据给定的属性值选择元素。 下面是一个例子：
+示例代码
+input[name="password"]
+上面选择了 name 属性值为 password 的 input 元素。
+现在，使用属性选择器设置提交按钮的样式，其中 display 为 block，width 为 60%。
+ */
