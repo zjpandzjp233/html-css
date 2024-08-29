@@ -1,0 +1,75 @@
+.canvas {
+    width: 500px;
+    height: 600px;
+    background-color: #4d0f00;
+    overflow: hidden;
+    filter: blur(2px);
+  }
+  
+  .frame {
+    border: 50px solid black;
+    width: 500px;
+    padding: 50px;
+    margin: 20px auto;
+  }
+  
+  .one {
+    width: 425px;
+    height: 150px;
+    background-color: #efb762;
+    margin: 20px auto;
+    box-shadow: 0 0 3px 3px #efb762;
+    border-radius: 9px;
+    transform: rotate(-0.6deg);
+  }
+  
+  .two {
+    width: 475px;
+    height: 200px;
+    background-color: #8f0401;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 3px 3px #8f0401;
+    border-radius: 8px 10px;
+    transform: rotate(0.4deg);
+  }
+  
+  .one, .two {
+    filter: blur(1px);
+  }
+  
+  .three {
+    width: 91%;
+    height: 28%;
+    background-color: #b20403;
+    margin: auto;
+    filter: blur(2px);
+    box-shadow: 0 0 5px 5px #b20403;
+    border-radius: 30px 25px 60px 12px;
+  transform: rotate(-0.2deg);
+  }
+
+/* 
+ overflow: hidden; 可以使上顶边粘在一起的两个发框隔出适当距离
+"overflow: hidden;" 是一个CSS属性值，用来控制元素内容溢出时的显示方式。当元素的内容超出其设定的尺寸时，如果设置了 `overflow: hidden;`，那么超出部分将被隐藏，
+不会显示在元素框之外。这通常用于确保内容不会溢出容器，从而保持布局的整洁和一致性。
+在提供的上下文信息中，"overflow: hidden;" 被用来将画布的尺寸从添加了填充后的502像素 x 602像素恢复回原始尺寸500像素 x 600像素。
+这意味着，如果画布的内容超出了这个尺寸，超出的部分将被隐藏，用户将看不到这些内容。
+
+
+在CSS中，margin 属性是用来设置元素的外边距的，它可以接受一到四个值来分别定义元素的上、右、下、左边距。当 margin 属性使用三个值时，
+第一个值设置上边距，第二个值同时设置左右边距，第三个值设置下边距。在你提供的代码片段中，margin: 0 auto 20px; 表示：
+第一个值 0 设置上边距为0像素。
+第二个值 auto 使得左右边距相等，并且尽可能地将元素水平居中。
+第三个值 20px 设置下边距为20像素。
+因此，这段CSS代码的作用是将元素的上边距设置为0，使其水平居中，并且下边距为20像素。
+：当两个值：第一个值设置垂直方向的外边距（上和下），第二个值设置水平方向的外边距（左和右）。
+
+box-shadow: h-offset v-offset blur spread color;
+h-offset 是阴影的水平偏移量，正值表示阴影向右移动，负值表示向左。
+v-offset 是阴影的垂直偏移量，正值表示阴影向下移动，负值表示向上。
+blur 是模糊半径，值越大，阴影越模糊。
+spread 是阴影的扩展半径，正值表示阴影会扩展，负值表示收缩。
+color 是阴影的颜色。
+
+  border-radius: 8px 10px;//分别表示左上右下和右上左下
+ */
