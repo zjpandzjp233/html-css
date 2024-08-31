@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f5f6f7;
+  }
+  
+  .header {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 32px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .gallery::after {
+    content: "";
+    width: 350px;
+  }
+  
+
+/* 
+*{
+  box-sizing:content-box;
+}
+box-sizing 属性用于设置这种行为。 默认情况下，使用的是 content-box 模型。
+ 在这个默认模型中，当某个元素有一个特定的宽度时，该宽度仅基于元素的内容来计算。 内边距和边框值会被加到总宽度中，因此元素宽度会增长以适应这些值。
+尝试使用全局 * 选择器，将 box-sizing 设置为 content-box。 此时，你不会看到任何变化，因为你正在使用默认值。
+
+.gallery img//不用 ，
+{
+  width:100%;
+  max-width:350px;
+  height:300px;//并将 height 属性设置为 300px，以保持图片大小一致。
+}
+
+.header {
+  text-align: center;       文本居中对齐 
+  text-transform: uppercase;  文本大写 
+  padding: 32px;            所有方向的内边距设置为 32px 
+  background-color: #0a0a23;  背景颜色 
+  color: #fff;                文本颜色 
+  border-bottom: 4px solid #fdb347; 底部边框 
+} 
+
+
+Flexbox 是一种一维 CSS 布局方法，侧重于内容的流动。 它提供了控制容器在容器中的间隔和对齐方式的能力。
+若要将元素设置为使用 Flexbox 布局，请将 display 属性设置为 flex。 这将使元素变成一个 flex 容器。 flex 容器内的直接子元素叫做 flex 项目
+创建 .gallery 选择器并将其设置为 flex 容器。
+
+Flexbox 可以被认为有两个轴，主轴和交叉轴。 主轴由 flex-direction 属性决定，有四个可选值：
+row（默认值）：主轴为水平方向，起点在左端。
+row-reverse：主轴为水平方向，起点在右端。
+column：主轴为垂直方向，起点在上沿。
+column-reverse：主轴为垂直方向，起点在下沿。
+注意：轴和方向将因文字方向而异。 上面的值是左至右的文本方向。
+尝试不同的值来观察布局的变化。
+练习完成时，将 .gallery 元素的 flex-direction 设置为 row。
+.gallery {
+  display: flex;
+  flex-direction:row;
+}
+
+flex-wrap 属性确定当 flex 容器太小时项目的排列方式。 将此属性设置为 wrap 将允许项目换行到下一行/列（取决于主轴）。
+ nowrap（默认值）将阻止项目换行，此时项目可能会收缩以自适应或溢出。
+设置 flex 项目使其占满一行时能够换行显示。
+
+justify-content 属性决定了 flex 容器中的项目如何沿主轴对齐，从而影响它们的位置和周围的空间。
+将 .gallery 选择器的 justify-content 属性设置为 center。
+justify:有使文本对齐的意思
+
+justify-content: center; 用于在主轴（main axis）上对齐项目。
+在你提供的代码中，由于 flex-direction: row; 指定了主轴为水平方向，所以 justify-content: center; 会使得所有的 flex 子项（flex items）在水平方向上居中对齐。
+align-items: center; 用于在交叉轴（cross axis）上对齐项目。
+交叉轴的方向取决于主轴的方向。在你的代码中，由于主轴是水平的，交叉轴就是垂直的。所以 align-items: center; 会使得所有的 flex 子项在垂直方向上居中对齐。
+
+请注意你的一些图像是如何失真的。 这是因为图像具有不同的纵横比。 你可以使用 object-fit 属性来确定图像的行为方式，而不是单独设置每个纵横比。
+为 .gallery img 选择器提供一个 object-fit 属性，并将其设置为 cover。 这将告诉图像填充 img 容器，同时保持横纵比，以便裁剪到适合。
+
+在 CSS 中，::after 是一个伪元素，用于在指定元素的内容后面插入内容。它可以用来添加装饰性的内容，比如清除浮动、创建装饰图案等。
+在你提供的代码中：
+css
+.gallery::after {
+  content: "";
+  width: 350px;
+}
+这段代码的作用是：
+content: ""; 表示伪元素 ::after 没有实际的内容，这里只是用来创建一个伪元素。
+width: 350px; 给这个伪元素设置了一个宽度为 350px。
+*/
