@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .label {
+    border: 2px solid black;
+    width: 270px;
+    margin: 20px auto;
+    padding: 0 7px;
+  }
+  
+  header h1 {
+    text-align: center;
+    margin: -4px 0;
+    letter-spacing: 0.15px
+  }
+  
+  p {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .divider {
+    border-bottom: 1px solid #888989;
+    margin: 2px 0;
+  }
+  
+  .bold {
+    font-weight: 800;
+  }
+  
+  .large {
+    height: 10px;
+  }
+  
+  .large, .medium {
+    background-color: black;
+    border: 0;
+  }
+  
+  .medium {
+    height: 5px;
+  }
+  
+  .small-text {
+    font-size: 0.85rem;
+  }
+  
+  
+  .calories-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .calories-info h2 {
+    margin: 0;
+  }
+  
+  .left-container p {
+    margin: -5px -2px;
+    font-size: 2em;
+    font-weight: 700;
+  }
+  
+  .calories-info span {
+    margin: -7px -2px;
+    font-size: 2.4em;
+    font-weight: 700;
+  }
+  
+  .right {
+    justify-content: flex-end;
+  }
+  
+  .indent {
+    margin-left: 1em;
+  }
+  
+  .double-indent {
+    margin-left: 2em;
+  }
+  
+  .daily-value p:not(.no-divider) {
+    border-bottom: 1px solid #888989;
+  }
+  
+  .note {
+    font-size: 0.6rem;
+    margin: 5px 0;
+    padding:0 8px;
+    text-indent:-8px;
+  }
+
+/* 
+
+创建一个 body 选择器，并将 font-family 设置为 Open Sans，以 sans-serif 为备用字体。
+请记住，名称中带有空格的字体必须用 CSS 引号括起来。
+创建一个 body 选择器，并将 font-family 设置为 Open Sans，以 sans-serif 为备用字体。
+请记住，名称中带有空格的字体必须用 CSS 引号括起来。
+
+
+在CSS中，box-sizing 属性定义了如何计算元素的总宽度和高度。默认情况下，box-sizing 的值是 content-box，
+这意味着元素的宽度和高度只包括内容区域，不包括边框、内边距或外边距。
+当你设置 box-sizing: border-box; 时，元素的总宽度和高度会包括内容、边框和内边距，但不会包括外边距。
+这意味着即使你为元素添加了边框或内边距，元素的总尺寸仍然保持不变，边框和内边距会从内容区域中“借用”空间。
+例如，如果你有一个宽度为 288px 的元素，并且你想要添加 10px 的内边距和 5px 的边框，使用 content-box 时，
+元素的实际宽度会超过 288px。但使用 border-box 时，元素的总宽度仍然保持为 288px，边框和内边距会占用内容区域的空间。
+
+letter-spacing:0.15px;//单词与单词间的距离。
+
+space-between：这是justify-content属性的一个值，表示将子元素均匀地分布在容器的主轴上，两端的子元素分别对齐到容器的两端，
+中间的子元素之间的间隔相等。这种布局方式在视觉上将子元素之间的空间平均分配，使得两端的子元素与容器边缘对齐，而中间的子元素则均匀分布在剩余空间中。
+<p class="bold">Serving size <span>2/3 cup (55g)</span></p>//这里的span 配合space-between就可以使p内的各部分分隔开跨度
+   
+h1 header
+{
+  text-align: center;
+  margin: -4px 0;
+  letter-spacing: 0.15px
+}
+这里，h1 header的语法是不正确的，因为CSS选择器的顺序应该是从最具体的元素（如h1）开始，
+然后是父元素（如header）。h1 header会被解析为选择所有h1元素内部的header元素，这在HTML中是不可能出现的，因为header元素不能作为h1元素的子元素。
+
+
+当HTML中的 div 元素同时拥有这两个类名时，它将应用这两个样式规则，    <div class="divider large"></div>
+
+
+rem 单位代表 root em，与 html 元素的字体大小有关。
+创建一个 .small-text 选择器，并将 font-size 设置为 0.85rem，
+计算结果大致为 13.6px（记得你之前将 html 设置为具有 16px 的 font-size）。
+
+在CSS中，align-items 属性用于在Flexbox布局中对齐容器内的项目（子元素）在交叉轴（垂直于主轴的轴）上的位置。
+当主轴为水平方向时，交叉轴为垂直方向，反之亦然。
+align-items: flex-end; 这个属性值意味着在Flexbox布局中，所有的子元素将会在交叉轴的末端对齐。也就是说，如果主轴是水平的，
+那么子元素将会在容器的底部对齐；如果主轴是垂直的，那么子元素将会在容器的右侧对齐。
+
+ margin:Ypx Xpx;  //调整XY来调整某个元素的坐标。
+
+
+<p>
+  <span>000</span>123<span>123</span>456789
+</p>
+加css的
+p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  max-width:1200px;
+}
+可以实现：
+000    123    123    456789
+
+.daily-value p:not(.no-divider) {
+  border-bottom: 1px solid #888989;
+}
+not表示不选后面的类，把.换成#就是表示id
+
+通过将单词 Trans 包装在 i 元素中，将其变为斜体。
+
+<p>这是一个空格&nbsp;后面跟着文字。</p>
+<p style="white-space: pre;">这是一个空格   后面跟着文字。</p>
+<pre>这是一个空格   后面跟着文字。</pre>
+
+
+<p><span><span class="bold">Sodium</span> 160mg</span> <span class="bold">7%</span></p>
+<p><span><span class="bold">Sodium</span>160mg</span> <span class="bold">7%</span></p>
+会产生一个空格在160mg前
+ */
