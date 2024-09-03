@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+    <title>Accessibility Quiz</title>
+    <link rel="stylesheet" href="Accessibility Quiz.css" />
+</head>
+
+<body>
+    <header>
+        <img id="logo" alt="freeCodeCamp" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
+        <h1>HTML/CSS Quiz</h1>
+        <nav>
+            <ul>
+                <li><a accesskey='z' href="#student-info">INFO</a></li>
+                <li><a accesskey='x' href="#html-questions">HTML</a></li>
+                <li><a accesskey='c' href="#css-questions">CSS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
+            <section role="region" aria-labelledby="student-info">
+                <h2 id="student-info">Student Info</h2>
+                <div class="info">
+                    <label for="student-name">Name:</label>
+                    <input type="text" name="student-name" id="student-name" />
+                </div>
+                <div class="info">
+                    <label for="student-email">Email:</label>
+                    <input type="email" name="student-email" id="student-email" />
+                </div>
+                <div class="info">
+                    <label for="birth-date">Date of Birth:</label>
+                    <input type="date" name="birth-date" id="birth-date" />
+                </div>
+            </section>
+            <section role="region" aria-labelledby="html-questions">
+                <h2 id="html-questions">HTML</h2>
+                <div class="question-block">
+                    <h3><span class="sr-only">Question</span>1</h3>
+                    <fieldset class="question" name="html-question-one">
+                        <legend>
+                            The legend element represents a caption for the content of its
+                            parent fieldset element
+                        </legend>
+                        <ul class="answers-list">
+                            <li>
+                                <label for="q1-a1">
+                                    <input type="radio" id="q1-a1" name="q1" value="true" />
+                                    True
+                                </label>
+                            </li>
+                            <li>
+                                <label for="q1-a2">
+                                    <input type="radio" id="q1-a2" name="q1" value="false" />
+                                    False
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </div>
+                <div class="question-block">
+                    <h3><span class="sr-only">Question</span>2</h3>
+                    <fieldset class="question" name="html-question-two">
+                        <legend>
+                            A label element nesting an input element is required to have a
+                            for attribute with the same value as the input's id
+                        </legend>
+                        <ul class="answers-list">
+                            <li>
+                                <label for="q2-a1">
+                                    <input type="radio" id="q2-a1" name="q2" value="true" />
+                                    True
+                                </label>
+                            </li>
+                            <li>
+                                <label for="q2-a2">
+                                    <input type="radio" id="q2-a2" name="q2" value="false" />
+                                    False
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </div>
+            </section>
+            <section role="region" aria-labelledby="css-questions">
+                <h2 id="css-questions">CSS</h2>
+                <div class="formrow">
+                    <div class="question-block">
+                        <label for="selector">Can the CSS margin property accept negative values?</label>
+                    </div>
+                    <div class="answer">
+                        <select name="selector" id="selector" required>
+                            <option value="">Select an option</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="question-block">
+                        <label for="css-textarea">Do you have any questions:</label>
+                    </div>
+                    <div class="answer">
+                        <textarea id="css-textarea" name="css-questions" rows="5" cols="24"></textarea>
+                    </div>
+                </div>
+            </section>
+            <button type="submit">Send</button>
+        </form>
+    </main>
+    <footer>
+        <address>
+            <a href="https://freecodecamp.org">freeCodeCamp</a><br />
+            San Francisco<br />
+            California<br />
+            USA
+        </address>
+    </footer>
+</body>
+
+</html>
+
+
+<!-- 
+
+header 元素将用于介绍页面，以及提供导航菜单。
+main 元素将包含页面的核心内容。 
+
+#->id用
+
+这里的<section>元素被赋予了一个role="region"属性。role="region"是一个预设值，
+用于指示这个<section>元素代表页面上的一个区域。通过这种方式，辅助技术可以识别这个区域，并提供给视障用户更清晰的页面结构信息。
+
+在HTML中，aria-labelledby 是一个属性，用于定义与当前元素相关的标签（label）元素的ID。
+这个属性是无障碍性（accessibility）的一部分，它帮助屏幕阅读器等辅助技术理解页面的结构和内容。
+在给定的代码片段中，aria-labelledby 应用于三个 section 元素，每个都与一个 h2 元素关联，
+后者通过其 id 属性被引用。这样，屏幕阅读器可以读取 h2 元素的文本，从而为 section 元素提供上下文信息。这是为了确保页面内容对视觉障碍用户友好。
+ <section role="region" aria-labelledby="html-questions"> <h2 id="html-questions">html-questions</h2></section>
+
+ 在HTML中，role属性用于定义元素的语义角色，以增强网页的可访问性。role="region" 表示该元素是一个区域，通常用来组织内容，使其更易于被屏幕阅读器识别和导航。
+在提供的代码片段中，有三个<section>元素，每个都使用了role="region"属性。这意味着每个<section>都定义了一个独立的区域，有助于屏幕阅读器用户理解页面的结构。
+
+为了能够在页面内导航，给每个锚元素一个与 h2 元素的 id 相对应的 href。各部分的关联：
+<li><a href="#student-info">INFO</a></li>
+<section role="region" aria-labelledby="student-info">
+<h2 id="student-info">Student Info</h2>
+</section>
+
+<input id="birth-date" type="date" name="Date of Birth" /> 新的时间作为input的type
+
+在这段HTML代码中，<fieldset>标签用于将表单中的元素分组。在HTML表单中，<fieldset>元素通常用来组织表单中的相关元素，使得表单更加结构化和易于理解。
+在上述代码中，每个<fieldset>元素被赋予了question类，这可能是为了在CSS中对这些表单元素进行特定的样式设置，或者是为了在JavaScript中更容易地选择和操作这些元素。
+
+问题编号不够详细。 对于视力受损的用户来说尤其如此。 解决这个问题的方法之一是在元素中添加只有屏幕阅读器才能读取的文本，
+而无需在元素中添加可见文本。
+为每个 h3 元素添加一个 class 为 sr-only 的 span 元素。
+<div class="question-block">
+<h3><span class="sr-only">Question</span>1</h3>
+<fieldset class="question"></fieldset>
+</div>
+sr就是:（Screen Reader）
+-->
