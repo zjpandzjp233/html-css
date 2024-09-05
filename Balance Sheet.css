@@ -1,0 +1,271 @@
+span[class~="sr-only"] {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    width: 1px !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    padding: 0 !important;
+    margin: -1px !important;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    color: #0a0a23;
+}
+
+h1 {
+    max-width: 37.25rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+}
+
+h1 .flex {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+}
+
+h1 .flex span:first-of-type {
+    font-size: 0.7em;
+}
+
+h1 .flex span:last-of-type {
+    font-size: 1.2em;
+}
+
+section {
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 2px solid #d0d0d5;
+}
+
+#years {
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    background: #0a0a23;
+    color: #fff;
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+    margin: 0 -2px;
+}
+
+#years span[class] {
+    font-weight: bold;
+    width: 4.5rem;
+    text-align: right;
+}
+
+.table-wrap {
+    padding: 0 0.75rem 1.5rem 0.75rem;
+}
+
+table {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+    position: relative;
+    margin-top: 3rem;
+}
+
+table caption {
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
+}
+
+tbody td {
+    width: 100vw;
+    min-width: 4rem;
+    max-width: 4rem;
+}
+
+tbody th {
+    width: calc(100% - 12rem);
+}
+
+tr[class="total"] {
+    border-bottom: 4px double #0a0a23;
+    font-weight: bold;
+}
+
+tr[class="total"] th {
+    text-align: left;
+    padding: 0.5rem 0 0.25rem 0.5rem;
+}
+
+tr.total td {
+    text-align: right;
+    padding: 0 0.25rem;
+}
+
+tr.total td:nth-of-type(3) {
+    padding-right: 0.5rem;
+}
+
+tr.total:hover {
+    background-color: #99c9ff;
+}
+
+td.current {
+    font-style: italic;
+}
+
+tr.data {
+    background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
+
+tr.data th {
+    text-align: left;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+}
+
+tr.data th .description {
+    display: block;
+    font-weight: normal;
+    font-style: italic;
+    padding: 1rem 0 0.75rem;
+    margin-right: -13.5rem;
+}
+
+tr.data td {
+    vertical-align: top;
+    padding: 0.3rem 0.25rem 0;
+    text-align: right;
+}
+
+tr.data td:last-of-type {
+    padding-right: 0.5rem;
+}
+
+/* 
+
+box-sizing: border-box; 表示将 HTML 元素的盒模型设置为 border-box。这意味着当你设置元素的宽度和高度时，边框和内边距会被包含在内，而不是在元素的总尺寸之外。这样做可以简化布局
+
+span[class~="sr-only"] 选择器将选择任何 span 元素，其 class 包括 sr-only。 创建该选择器，并将其 border 属性设置为 0。
+
+ clip-path:inset(50%);
+ inset(50%) 的效果如下：
+从元素的顶部边缘向内延伸50%，形成一个新的顶部边界。
+从元素的底部边缘向内延伸50%，形成一个新的底部边界。
+从元素的左侧边缘向内延伸50%，形成一个新的左侧边界。
+从元素的右侧边缘向内延伸50%，形成一个新的右侧边界。
+
+:first-of-type 伪选择器用于定位与选择器匹配的第一个元素。
+ 创建一个 h1 .flex span:first-of-type 选择器，以定位 .flex 容器中的第一个 span 元素。 
+ 请记住，span 元素在视觉上是颠倒的，因此这看起来是页面上的第二个元素。
+
+ position: sticky; 属性是一种特殊的定位方式，用于创建粘性元素。
+ 当用户滚动页面时，粘性元素会在到达某个位置之前保持正常文档流的行为，一旦到达这个位置，它会固定在指定的位置，直到页面滚动到另一个位置。
+ 将内容对齐到 flex 方向的末尾: 
+ justify-content:flex-end;
+
+ 在CSS中，z-index 属性定义了一个元素的堆叠顺序。堆叠顺序决定了元素在页面上的前后位置，
+ 即哪些元素会覆盖其他元素。z-index 可以有以下三种值：
+自动值（auto）：元素的堆叠顺序由其他属性决定，如 position 属性。
+整数：元素的堆叠顺序由 z-index 的整数值决定。数值越大，元素越在上层。
+继承：从父元素继承 z-index 值。
+在您提供的代码片段中，z-index: 999; 表示将该元素的堆叠顺序设置为999。
+这意味着，除非有其他元素的 z-index 值更高，否则这个元素将显示在页面上其他元素的上方。
+
+ span[class] 语法将针对任何具有 class 属性集的 span 元素，而不管该属性的值如何。
+
+ 属性都被赋予了 !important，确保它们会被优先应用，而不考虑 CSS 规则的顺序或特殊性。
+  white-space: nowrap !important;
+  padding: 0 !important;
+  margin: -1px !important;
+
+  span:not(.sr-only) {         //表示不选
+  font-weight: normal;
+}
+
+border-collapse: collapse;：这个属性用于设置表格的边框合并方式。当设置为collapse时，表格中的相邻单元格的边框会合并为一个单一的边框，
+而不是每个单元格显示独立的边框。这使得表格看起来更加整洁和连续。
+border: 0;：这个属性用于设置表格的边框宽度。将边框宽度设置为0意味着表格的边框将不可见，即表格没有边框。
+这常用于创建无边框的表格，或者在需要自定义边框样式时，先隐藏默认边框。
+在 CSS 中，position: relative; 属性用于设置元素的定位方式。当一个元素的 position 属性被设置为 relative 时，它表示该元素相对于其正常位置进行定位。
+这意味着元素的位置可以通过 top, right, bottom, 和 left 属性进行调整，而不会脱离文档流。
+以下是 position: relative; 的一些主要用途：
+偏移定位：你可以使用 top, right, bottom, 和 left 属性来移动元素，而不影响其他元素的布局。例如，你可以将一个元素向下移动 20px，而不会影响其他元素的位置。
+层叠上下文：设置为 relative 的元素会创建一个新的层叠上下文，这意味着你可以使用 z-index 属性来控制该元素及其子元素的堆叠顺序。
+参考点：当使用 absolute 或 fixed 定位的子元素时，它们会相对于最近的已定位（非 static）祖先元素进行定位。
+如果最近的已定位祖先元素是 relative 定位的，那么子元素就会相对于它进行定位。
+动画和过渡：在动画或过渡中，relative 定位可以用来定义元素的起始位置，这样动画就可以从这个位置开始。
+避免使用 margin 塌陷：在某些情况下，使用 relative 定位可以帮助避免由于 margin 塌陷导致的布局问题。
+这里是一个简单的例子，展示了如何使用 position: relative; 来移动一个元素：
+css
+.element {
+  position: relative;
+  top: 20px;
+  left: 30px;
+}
+在这个例子中，.element 会相对于它在正常文档流中的位置向下移动 20px，向右移动 30px
+
+
+在 CSS 中，position: absolute; 属性用于将元素从正常文档流中移除，
+并相对于其最近的已定位（非 static）祖先元素进行定位。如果不存在这样的祖先元素，那么它将相对于初始包含块（通常是 HTML 文档的 <html> 元素）进行定位。
+以下是 position: absolute; 的一些关键特性和用途：
+脱离文档流：绝对定位的元素不会占据文档流中的任何空间，这意味着它不会影响其他元素的布局。
+相对于最近的已定位祖先：元素的位置由 top, right, bottom, 和 left 属性确定，这些属性定义了元素相对于其最近的已定位（即非 static 定位）祖先元素的偏移。
+层叠上下文：绝对定位的元素会创建一个新的层叠上下文，这意味着你可以使用 z-index 属性来控制该元素及其子元素的堆叠顺序。
+固定位置：当用于子元素的定位时，绝对定位可以创建复杂的布局，如弹出框、下拉菜单等。
+覆盖元素：绝对定位的元素可以覆盖页面上的其他元素，这在创建覆盖层或遮罩时非常有用。
+动态效果：在动画和过渡中，绝对定位可以用来精确控制元素的移动和位置变化。
+这里是一个简单的例子，展示了如何使用 position: absolute; 来定位一个元素：
+css
+.parent {
+  position: relative;    确保父元素是已定位的 
+}
+.child {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+}
+在这个例子中，.child 元素会相对于 .parent 元素的顶部向下移动 50px，向右移动 20px。如果 .parent 元素没有设置为 relative 定位，那么 .child 将会相对于 <html> 元素进行定位。
+需要注意的是，由于绝对定位的元素脱离了文档流，它不会占据空间，这可能会导致布局上的一些挑战，特别是在复杂的布局中。此外，如果没有正确的祖先元素定位，
+绝对定位的元素可能会相对于整个页面定位，这可能不是预期的行为。
+直接父元素：如果 .child 是 .parent 的直接子元素，那么 .child 的绝对定位确实是相对于 .parent 进行的，无论 .parent 的定位属性是什么。
+定位上下文：关键在于“定位上下文”。绝对定位的元素是相对于其最近的已定位（非 static）祖先元素进行定位的。
+如果 .parent 没有设置为 relative、absolute、fixed 或 sticky 定位，那么它实际上是 static 定位（默认值），这意味着 .child 会向上寻找下一个已定位的祖先元素作为定位上下文。
+关系：如果 .parent 设置为 position: relative;，那么 .child 会相对于 .parent 进行定位。
+如果 .parent 是 static 定位（默认情况，没有明确设置 position 属性），那么 .child 会相对于下一个已定位的祖先元素进行定位。如果没有其他已定位的祖先元素，
+那么 .child 会相对于 <html> 元素进行定位。
+
+现在以表格主体中的 th 元素为目标，并给它们一个*整个容器*的宽度，减去 12rem。
+tbody th{
+  width:calc(100%-12rem);//百分比减具体的数。
+}
+
+ border-bottom:4px double #0a0a23;  //双实线
+
+ padding: 0.3rem 0.25rem 0;
+这部分定义了所选元素的内边距（padding）。内边距是指元素内容与其边框之间的空间。具体来说：
+0.3rem 设置上内边距。
+0.25rem 设置左右内边距。
+0 设置下内边距。
+
+vertical-align 是 CSS 中的一个属性，用于指定行内元素（inline elements）或表格单元格（table-cell elements）的垂直对齐方式。
+vertical-align: top; 的作用是将元素的顶部与行内框（inline box）或表格单元格的顶部对齐。
+行内元素：对于行内元素，vertical-align: top; 会使元素的顶部与包含它的行框（line box）的顶部对齐。
+表格单元格：对于表格单元格，vertical-align: top; 会使单元格内容的顶部与单元格框的顶部对齐。
+
+为 tr.data 元素中的 td 元素创建另一个选择器，但要特别选择最后一个。 将它的右侧内边距设置为 0.5rem。
+tr.data td:last-of-type
+{
+padding-right:0.5rem;
+}
+::after 是一个伪元素选择器，用于在选定的元素之后插入内容。
+:last-of-type 是一个伪类选择器，用于选择其父元素中的最后一个同类型兄弟元素。
+*/
