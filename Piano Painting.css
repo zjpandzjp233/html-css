@@ -1,0 +1,162 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+#piano {
+    background-color: #00471b;
+    width: 992px;
+    height: 290px;
+    margin: 80px auto;
+    padding: 90px 20px 0 20px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.keys {
+    background-color: #040404;
+    width: 949px;
+    height: 180px;
+    padding-left: 2px;
+    overflow: hidden;
+}
+
+.key {
+    background-color: #ffffff;
+    position: relative;
+    width: 41px;
+    height: 175px;
+    margin: 2px;
+    float: left;
+    border-radius: 0 0 3px 3px;
+}
+
+.key.black--key::after {
+    background-color: #1d1e22;
+    content: "";
+    position: absolute;
+    left: -18px;
+    width: 32px;
+    height: 100px;
+    border-radius: 0 0 3px 3px;
+}
+
+.logo {
+    width: 200px;
+    position: absolute;
+    top: 23px;
+}
+
+@media (max-width: 768px) {
+    #piano {
+        width: 358px;
+    }
+
+    .keys {
+        width: 318px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {
+    #piano {
+        width: 675px;
+    }
+
+    .keys {
+        width: 633px;
+    }
+
+
+}
+
+/* 
+
+步骤 10
+现在你已经重置了 html 框模型，你还需要将其传递给其中的元素。 为此，你可以将 box-sizing 属性设置为 inherit，这将告诉目标元素使用与父元素相同的值。
+html {
+  box-sizing: border-box;
+}
+*,::before,::after{
+  box-sizing:inherit;
+}
+*, ::before, ::after 选择器选择了所有元素，以及这些元素的 ::before 和 ::after 伪元素。box-sizing: inherit; 表示这些元素和伪元素会继承其父元素的 box-sizing 属性。
+由于 html 元素已经设置了 box-sizing: border-box;，所以所有元素和伪元素也会继承这一设置，除非它们被显式地设置为其他值。
+
+#piano {
+  background-color: #00471b;
+  width: 992px;
+  height: 290px;
+  margin: 80px auto;
+  padding: 90px 20px 0 20px;//可以推动piano内部的keys //因为采用border-box的盒子模型所以，padding会占据宽高，使内容区变小，所以使得keys变小
+}
+
+.keys {
+  background-color: #040404;
+  width: 949px;
+  height: 180px;
+  padding-left: 2px;
+}
+
+float: left; 是CSS中的一个属性，用于控制元素的浮动。当一个元素设置为 float: left;，
+它会尽可能地向左浮动，直到它的外边缘接触到包含框或另一个浮动元素的边缘。这通常用于在页面上创建多列布局，或者将图像等元素浮动到文本的一边。
+
+.key.black--key::after {
+  background-color: #1d1e22;
+  content: "";
+  position: absolute;
+  left: -18px;
+  width: 32px;
+  height: 100px;
+}
+::after 伪元素的父元素是 .key.black--key 选择器所指定的元素。这里的 .key.black--key 很可能是一个类选择器，用于选择具有 key 类且同时具有 black--key 类的HTML元素。
+当这个CSS规则被应用时，它会为这些元素创建一个伪元素，该伪元素会在元素的后面（在视觉上）添加一个装饰性的矩形块。
+简单来说，::after 伪元素的父元素就是那些同时拥有 key 和 black--key 这两个类的HTML元素。
+}
+
+@media @ 规则，也被称为媒体查询，用于根据指定条件应用 CSS。 媒体查询通常基于视图宽度的 max-width 和 min-width 属性来应用指定 CSS 。
+在下面的示例中，当视图端口为 960px 宽及以下时，padding 将应用 .card 类。
+示例代码
+@media (max-width: 960px) {
+  .card {
+    padding: 2rem;
+  }
+}
+添加一个媒体查询，当视图端口是 768px 宽及以下时将会被应用。
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media (max-width: 960px) {
+  .container {
+    max-width: 100%;
+  }
+}
+在这个例子中：
+.container 的最大宽度被限制为960px，并且水平居中显示。
+当屏幕宽度小于或等于960px时，.container 的最大宽度被设置为100%，以适应更小的屏幕。
+
+.keys {
+  background-color: #040404;
+  width: 949px;
+  height: 180px;
+  padding-left: 2px;
+  overflow:hidden; //此属性将隐藏任何被推到 .keys 的设置 width 值之外的元素。
+}
+
+逻辑操作符可以用来构建更复杂的媒体查询。 and 逻辑运算符用于查询两个媒体条件。
+例如，一个针对在 500px 到 1000px 之间显示宽度的媒体查询：
+示例代码
+@media (min-width: 500px) and (max-width: 1000px){
+}
+如果浏览器窗口大于 769px 但小于 1199px，则添加另一个 @media 规则。
+*/
