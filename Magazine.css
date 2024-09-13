@@ -1,0 +1,298 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Baskervville', serif;
+  color: linen;
+  background-color: rgb(20, 30, 40);
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: linen;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+  row-gap: 3rem;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+hr {
+  margin: 1.5rem 0;
+  border: 1px solid rgba(120, 120, 120, 0.6);
+}
+
+.heading {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1.5rem;
+}
+
+.text {
+  grid-column: 2 / 3;
+  font-size: 1.8rem;
+  letter-spacing: 0.6px;
+  column-width: 25rem;
+  text-align: justify;
+}
+
+.hero {
+  grid-column: 1 / -1;
+  position: relative;
+}
+
+.hero-title {
+  text-align: center;
+  color: orangered;
+  font-size: 8rem;
+}
+.hero-img{
+  height: 35rem;
+}
+.hero-subtitle {
+  font-size: 2.4rem;
+  color: orangered;
+  text-align: center;
+}
+
+.author {
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.author-name a:hover {
+  background-color: #306203;
+}
+
+.publish-date {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.social-icons {
+  display: grid;
+  font-size: 3rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  align-items: center;
+}
+
+.first-paragraph::first-letter {
+  font-size: 6rem;
+  color: orangered;
+  float: left;
+  margin-right: 1rem;
+}
+
+.quote {
+  color: #00beef;
+  font-size: 2.4rem;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.quote::before {
+  content: '" ';
+}
+
+.quote::after {
+  content: ' "';
+}
+
+.text-with-images {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.lists {
+  list-style-type: none;
+  margin-top: 2rem;
+}
+
+.lists li {
+  margin-bottom: 7.5rem;
+}
+
+.list-title,
+.list-subtitle {
+  color: #00beef;
+}
+
+.image-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, min-content);
+  gap: 2rem;
+  place-items: center;
+}
+
+.image-1,
+.image-3 {
+  grid-column: 1 / -1;
+}
+
+@media only screen and (max-width: 720px) {
+  .image-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .text-with-images {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .hero-title {
+    font-size: 6rem;
+  }
+
+  .hero-subtitle,
+  .author,
+  .quote,
+  .list-title {
+    font-size: 1.8rem;
+  }
+
+  .social-icons {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+
+/* 
+创建一个 html 选择器并将其 font-size 属性设置为 62.5%。 这会将网页的默认字体大小设置为 10px（浏览器默认为 16px）。
+这将使你以后更容易使用 rem 单位，因为 2rem 将是 20px。
+
+a{
+  text-decoration:none;  //去掉下划线
+  color:linen;   //改a元素的颜色
+}
+
+在CSS中，grid-template-columns 属性用于定义一个网格布局中列的宽度。在你提供的代码片段中，grid-template-columns: 1fr 94rem 1fr; 这行代码设置了网格布局的三列。
+1fr 表示一个网格单元（fractional unit），它将可用空间分成等份。在这里，1fr 表示网格容器中剩余空间的一半。
+94rem 表示列的固定宽度，单位是rem（相对长度单位，相对于根元素的字体大小）。这里，中间列的宽度被设置为94rem。
+再次使用 1fr 表示最后一列也将占据网格容器中剩余空间的一半。
+因此，这个属性创建了一个三列的网格布局，其中中间列的宽度是固定的94rem，而第一列和最后一列则平分剩余的空间。
+
+grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr); 表示将网格的列分成三部分，每部分使用 minmax 函数来定义列的最小和最大宽度：
+第一列：使用 minmax(2rem, 1fr)，表示该列的最小宽度为 2rem，最大宽度为可用空间的 1fr（即一个分数单位）。
+这意味着在空间足够的情况下，该列会占据剩余空间的全部或一部分。
+第二列：使用 minmax(min-content, 94rem)，表示该列的最小宽度由其内容决定（即内容的自然最小宽度）
+，最大宽度为固定的 94rem。这意味着该列的宽度会根据内容自动调整到最小值，但不会超过 94rem。
+第三列：与第一列相同，使用 minmax(2rem, 1fr)，表示该列的最小宽度为 2rem，最大宽度为可用空间的 1fr。同样地，在空间足够的情况下，该列会占据剩余空间的全部或一部分。
+
+在CSS中，object-fit 属性用于控制替换元素（如<img>标签）的尺寸、位置和缩放。object-fit: cover; 这个属性值意味着图像将被缩放并裁剪，以完全覆盖其容器，
+同时保持其宽高比。这通常用于确保图像完全填满容器，但可能会裁掉图像的一部分以避免改变其原始的宽高比。
+
+请记住，grid-column 属性确定元素开始和结束的列。 有时你不确定网格将有多少列，但你希望元素停在最后一列。 为此，你可以使用 -1 作为结束列。
+创建一个 .hero 选择器，并将其 grid-column 属性设置为 1 / -1。 这将告诉元素跨越网格的整个宽度。
+
+grid-auto-flow: column;：这个值告诉浏览器，当网格项目被添加到网格容器中时，应该按照列来自动放置。也就是说，项目会按照列的顺序依次排列，直到填满一列，然后开始填充下一列。
+
+grid-auto-flow: column dense;：在这个值中，column的作用同上，表示项目按列自动放置。而dense是一个可选值，它的作用是允许网格布局算法在填充网格时更加紧凑。
+具体来说，它会尝试将较小的项目向前移动，以填补网格中的空白区域。
+这样做的结果是，网格中的项目可能会显示得比没有使用dense时更加紧密，而且项目的位置可能会与它们在HTML中的顺序不同。
+
+.social-icons {
+  display: grid;
+  font-size: 3rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns:1fr;
+}
+在CSS中，grid-auto-columns 属性用于定义网格容器中自动创建的列的默认大小。在这段代码中，grid-auto-columns: 1fr; 意味着任何新自动创建的列将默认具有 1fr 的大小。
+解释如下：
+grid-auto-columns: 1fr;：这行代码设置了自动创建的列的默认大小。1fr 是一个分数单位，表示可用空间的一份。这意味着新创建的列将平均分配网格容器的可用空间。
+上下文：在这段代码中，.social-icons 选择器定义了一个网格布局，其中包含多个图标元素。网格的列通过 grid-template-columns: repeat(5, 1fr); 定义，意味着有5列，每列大小为 1fr。当添加新的图标元素时，如果没有足够的空间，网格会自动创建新的列。
+默认情况下，这些新列的大小可能会与现有的列不匹配。通过设置 grid-auto-columns: 1fr;，可以确保新创建的列也具有 1fr 的大小，与现有列保持一致。
+作用：这个属性确保了网格布局的一致性和灵活性。无论何时添加新的图标元素，网格都能自动调整，保持列宽一致，从而避免布局混乱。
+总结：grid-auto-columns: 1fr; 确保了在 .social-icons 网格布局中，新自动创建的列具有与现有列相同的宽度（1fr），从而保持布局的一致性和美观性。
+
+很像 Flexbox，使用 CSS Grid，你可以使用 align-items 和 justify-items 对齐网格项目的内容。 align-items 将沿列轴对齐子元素，而 justify-items 将沿行轴对齐子元素。
+
+.text {
+  grid-column: 2 / 3;
+  font-size: 1.8rem;
+  letter-spacing: 0.6px;
+  column-width:25rem;        //将图文排版成左中右三部分的方法，更符合办公的排版，不设置grid，设置成grid会乱。
+}
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid的段排列：
+  123
+  456
+  789
+column-width:25rem; 的段排列：
+147
+258
+369
+
+杂志在其印刷内容中经常使用整齐划一的文字来组织版面和控制其内容的布局。 虽然这在印刷品中是可行的，
+但网站上的对齐文本可能引起一个可访问性问题，例如，对有阅读障碍的人来说是一个挑战。
+为了让你的项目看起来像一本印刷杂志，给 .text 选择器一个 text-align 属性，设置为 justify。
+
+.first-paragraph::first-letter {
+  font-size: 6rem;
+  color: orangered;
+  float :left;   //让文字包绕着这个第一个放大的字母 配合给文字的 text-align: justify;
+ //让包绕后的文字更均匀，在float的元素后的伪选择器里面写content=" ";clear:both;display:block;可清楚float对后续元素的影响
+  margin-right:1rem;
+}
+
+创建一个 .lists 选择器，并将 list-style-type 属性设置为 none。 这将清除列表项上的标记(●)
+
+.grid-template-rows: repeat(3, min-content); 这一行定义了网格布局中的行。grid-template-rows 属性用来设置网格容器的行大小。
+repeat(3, min-content) 表示网格将有三行，每行的高度将根据该行中最矮的内容自动调整，即“最小内容”高度。
+
+gap 属性是同时设置 column-gap 和 row-gap 值的简写方式。 如果给定一个值，它会将 column-gap 和 row-gap 都设置为该值。 
+如果给定两个值，它会将 row-gap 设置为第一个值，将 column-gap 设置为第二个值。
+place-items 属性可用于同时设置 align-items 和 justify-items 的值。 place-items 属性采用一个或两个值。 
+如果提供了一个值，则它同时用于 align-items 和 justify-items 属性。
+ 如果提供了两个值，则第一个值用于 align-items 属性，第二个值用于 justify-items 属性。
+
+“only screen”在 CSS 中的作用
+仅针对屏幕设备 “only screen”在 CSS 的“@media only screen”语句中，
+表示仅对屏幕设备应用后续的样式规则，不涵盖打印设备、盲文设备等其他类型的设备。
+*/
