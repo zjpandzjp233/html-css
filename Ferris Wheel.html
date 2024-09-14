@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ferris Wheel</title>
+    <link rel="stylesheet" href="./Ferris Wheel.css">
+</head>
+
+<body>
+    <div class="wheel">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+
+        <div class="cabin"></div>
+        <img src="https://s2.loli.net/2024/09/14/6OtWIYmvfBydnso.png" alt="lilin" class="lilin">
+        
+        <div class="cabin"></div>
+        <img src="https://s2.loli.net/2024/09/14/o37qgpJkAiBe6EO.png" alt="zjp" class="zjp">
+        <div class="cabin"></div>
+        <div class="cabin"></div>
+        <div class="cabin"></div>
+        <div class="cabin"></div>
+    </div>
+
+
+    <audio id="myAudio" preload="auto"> 
+        <source src="./lilin.mp3"  type="audio/mpeg"> <!-- MP3 格式 --> 
+        <source src="./lilin.ogg"  type="audio/ogg"> <!-- OGG 格式 --> 
+        您的浏览器不支持 audio 标签。 <!-- 提示信息 --> 
+    </audio> 
+    <script> 
+        window.onload  = function() { 
+            var audio = document.getElementById('myAudio');  // 获取 audio 元素 
+            audio.play();  // 自动播放音频（可能受浏览器限制） 
+        }; 
+    </script> 
+</body>
+
+</html>

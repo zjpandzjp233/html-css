@@ -1,0 +1,156 @@
+
+.wheel {
+    border: 2px solid black;
+    border-radius: 50%;
+    left:40%;
+    position: absolute;
+    height: 55vw;
+    width: 55vw;
+    max-width: 500px;
+    max-height: 500px;
+    animation-name: wheel;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.line {
+    background-color: black;
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+}
+
+.line:nth-of-type(2) {
+    transform: rotate(60deg);
+}
+
+.line:nth-of-type(3) {
+    transform: rotate(120deg);
+}
+
+.line:nth-of-type(4) {
+    transform: rotate(180deg);
+}
+
+.line:nth-of-type(5) {
+    transform: rotate(240deg);
+}
+
+.line:nth-of-type(6) {
+    transform: rotate(300deg);
+}
+
+.cabin {
+    background-color: red;
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    border: 2px solid;
+    transform-origin: 50% 0%;
+    animation: cabins 10s linear infinite;
+}
+
+.cabin:nth-of-type(1) {
+    right: -8.5%;
+    top: 50%;
+}
+
+.cabin:nth-of-type(2) {
+    right: 17%;
+    top: 93.5%;
+}
+
+.cabin:nth-of-type(3) {
+    right: 67%;
+    top: 93.5%;
+}
+
+.cabin:nth-of-type(4) {
+    left: -8.5%;
+    top: 50%;
+}
+
+.cabin:nth-of-type(5) {
+    left: 17%;
+    top: 7%;
+}
+
+.cabin:nth-of-type(6) {
+    right: 17%;
+    top: 7%;
+}
+
+@keyframes wheel {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cabins {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: purple;
+    }
+
+    75% {
+        background-color: yellow;
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+.lilin{
+    position: absolute;
+    right: -8.5%;
+    top: 50%;
+    width: 20%;
+    transform-origin: 50% 0%;
+    animation: cabins 10s linear infinite;
+}
+.zjp{
+    position: absolute;
+    right: 17%;
+    top: 97.5%;
+    width:20%;
+    transform-origin: 50% 5%;
+    animation: cabins 10s linear infinite;
+}
+
+/* 
+.line {
+  background-color: black;
+  width: 50%;      //相较父类
+  height: 2px; //相较父类
+  position:absolute;
+  left:50%; //相较父类
+  top:50%; //相较父类
+}
+
+transform-origin属性用于设置应用CSS变换点。 例如，当执行 rotate时（你将在本项目的后面进行），transform-origin决定了元素围绕哪一点旋转。
+给 .line 选择器一个 0% 0% 的 transform-origin 属性。 这将使原点从左边偏移 0%，从上面偏移 0%，把它设置在元素的左上角。
+
+@keyframes at-rule 用于定义 CSS 动画的流程。 在 @keyframes 规则中，你可以为动画序列中的特定点创建选择器，例如 0% 或 25%，或者使用 from 和 to 来定义序列的开始和结束。
+需要为 @keyframes 规则分配一个名称，你可以在其他规则中使用该名称来引用它们。 例如，@keyframes freeCodeCamp { } 规则将被命名为 freeCodeCamp。
+是时候开始制作动画了。 创建一个名为 wheel 的 @keyframes 规则
+
+animation-name 属性用于将 @keyframes 规则链接到 CSS 选择器。 此属性的值应与 @keyframes 规则的名称匹配。 给你的 .wheel 选择器一个 animation-name 属性值为 wheel。
+animation-duration 属性用于设置动画应该在多长时间内完成。 时间应以秒（s）或毫秒（ms）为单位指定。 给你的 .wheel 选择器添加值为 10s 的 animation-duration 属性。
+
+ease-in-out 计时功能。 这个设置将告诉动画以较慢的速度开始和结束，但在循环的中间部分移动得更快。
+*/
